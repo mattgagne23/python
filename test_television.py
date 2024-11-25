@@ -27,7 +27,7 @@ class Test:
         assert self.tv1.__str__() == 'Power = False, Channel = 0, Volume = 0'
 
         self.tv1.power()
-        self.tv1.channel_up 
+        self.tv1.channel_up() 
         assert self.tv1.__str__() == 'Power = True, Channel = 1, Volume = 0'
 
         self.tv1.channel_up()
@@ -40,13 +40,13 @@ class Test:
         assert self.tv1.__str__() == 'Power = False, Channel = 0, Volume = 0'
 
         self.tv1.power()
-        self.tv1.channel_down
+        self.tv1.channel_down()
         assert self.tv1.__str__() == 'Power = True, Channel = 3, Volume = 0'
 
-        self.tv1.channel_down
-        self.tv1.channel_down
-        self.tv1.channel_down
-        self.tv1.channel_down
+        self.tv1.channel_down()
+        self.tv1.channel_down()
+        self.tv1.channel_down()
+        self.tv1.channel_down()
         assert self.tv1.__str__() == 'Power = True, Channel = 3, Volume = 0'
 
     def test_volume_up(self):

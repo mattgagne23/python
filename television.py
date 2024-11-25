@@ -61,7 +61,7 @@ class Television:
         Method to increase the TV volume
         '''
         if self.__status == True:
-            self.__muted == False
+            self.__muted = False
             if self.__volume < Television.MAX_VOLUME:
                 self.__volume += 1
 
@@ -70,13 +70,17 @@ class Television:
         Method to decrease the TV volume
         '''
         if self.__status == True:
-            self.__muted == False
+            self.__muted = False
             if self.__volume > Television.MIN_VOLUME:
                 self.__volume -= 1
 
     def __str__(self) -> str:
         '''
-        Method to return a string of the TV configurations Power, Channel, Volume
+        Method to return a string of the TV configurations Power, Channel, Volume.
+        If TV is muted, will return Television.MIN_VOLUME in string.
+        :param self.__status: TV Power Status On/Off
+        :param self.__channel: Channel the TV is currently on
+        :param self.__volume: Volume setting the TV is currently on. If muted, will return Television.MIN_VOLUME (0).
         '''
         if self.__muted == True:
             return f'Power = {self.__status}, Channel = {self.__channel}, Volume = {Television.MIN_VOLUME}'
